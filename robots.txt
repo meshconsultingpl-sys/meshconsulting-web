@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://meshconsulting.pl/sitemap.xml
