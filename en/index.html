@@ -157,7 +157,7 @@ section{position:relative;overflow-x:clip}
 .manifesto em{font-style:normal;color:var(--cyan)}
 
 /* horizontal gallery */
-.gal{height:100vh;height:100svh;display:flex;flex-direction:column;justify-content:center;gap:clamp(18px,3vh,34px);overflow:hidden}
+.gal{height:auto;display:flex;flex-direction:column;justify-content:flex-start;gap:clamp(18px,3vh,34px);overflow:hidden;padding-block:28px 36px}
 .gal-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;width:100%}
 .gal-track{display:flex;gap:clamp(16px,2.4vw,32px);padding-left:var(--gut);padding-right:20vw;width:max-content;will-change:transform}
 .gcard{position:relative;flex:none;width:clamp(280px,44vw,720px);aspect-ratio:3/2;border:0;padding:0;background:none;cursor:zoom-in;text-align:left;color:var(--text)}
@@ -1082,8 +1082,8 @@ applyLang(); bindSpot(); icons();
   /* GALLERY: pinned horizontal scroll, flyers grow as they reach the centre */
   const track=$('#galTrack');
   const dist=()=>Math.max(0,track.scrollWidth-innerWidth);
-  const hz=gsap.to(track,{x:()=>-dist(),ease:'none',scrollTrigger:{trigger:'#galeria',start:'top top',end:()=>'+='+dist(),pin:true,scrub:1,invalidateOnRefresh:true,anticipatePin:1}});
-  gsap.to('#galBar',{scaleX:1,ease:'none',scrollTrigger:{trigger:'#galeria',start:'top top',end:()=>'+='+dist(),scrub:true,invalidateOnRefresh:true}});
+  const hz=gsap.to(track,{x:()=>-dist(),ease:'none',scrollTrigger:{trigger:'#galeria',start:'top 80px',end:()=>'+='+dist(),pin:true,scrub:1,invalidateOnRefresh:true,anticipatePin:1}});
+  gsap.to('#galBar',{scaleX:1,ease:'none',scrollTrigger:{trigger:'#galeria',start:'top 80px',end:()=>'+='+dist(),scrub:true,invalidateOnRefresh:true}});
   track.querySelectorAll('.gcard').forEach(c=>{
     gsap.fromTo(c.querySelector('.gi'),{scale:.7,opacity:.35,rotateY:-18,transformPerspective:1200},{scale:1,opacity:1,rotateY:0,ease:'none',scrollTrigger:{trigger:c,containerAnimation:hz,start:'left 100%',end:'center 55%',scrub:true}});
     gsap.fromTo(c.querySelector('img'),{xPercent:-7},{xPercent:7,ease:'none',scrollTrigger:{trigger:c,containerAnimation:hz,start:'left right',end:'right left',scrub:true}});
