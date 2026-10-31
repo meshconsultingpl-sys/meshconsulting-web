@@ -102,9 +102,9 @@ section{position:relative;overflow-x:clip}
 .btn-wa:hover{transform:translateY(-2px);box-shadow:0 12px 30px -12px #25D366}
 
 /* hero */
-.hero{min-height:min(920px,100svh);display:flex;align-items:center;padding-top:120px;padding-bottom:64px;overflow:hidden}
+.hero{min-height:min(820px,100svh);display:flex;align-items:center;padding-top:112px;padding-bottom:20px;overflow:hidden}
 #mesh{position:absolute;inset:0;width:100%;height:100%;z-index:0}
-.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:180px;background:linear-gradient(transparent,var(--ink));z-index:1;pointer-events:none}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:90px;background:linear-gradient(transparent,var(--ink));z-index:1;pointer-events:none}
 .hero .wrap{position:relative;z-index:2;width:100%}
 .pill{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;border:1px solid #00F2FE40;background:#00F2FE10;color:#9BEFFF;font-size:13px;font-weight:600}
 .pill svg{width:15px;height:15px}
@@ -1036,11 +1036,11 @@ applyLang(); bindSpot(); icons();
   heroTitle(.2);
   gsap.from(['.hero .pill','.hero .sub','.hero .intro','.search','.stats'],{y:50,opacity:0,duration:1.1,ease:'power3.out',stagger:.12,delay:.6});
   $$('.count').forEach(el=>{const to=+el.dataset.to,o={v:0};gsap.to(o,{v:to,duration:2.4,ease:'power2.out',delay:1,onUpdate:()=>el.textContent=Math.round(o.v).toLocaleString(lang==='es'?'es-ES':'en-US')})});
-  gsap.to('.hero .wrap',{yPercent:-28,scale:.9,opacity:0,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+  gsap.to('.hero .wrap',{yPercent:-8,scale:.97,opacity:.15,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
   gsap.to('#mesh',{scale:1.4,opacity:.15,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
 
   /* CINE: pinned, image expands from a rounded window to full screen + word sequence */
-  gsap.set('#cineMedia',{clipPath:'inset(24% 28% 24% 28% round 36px)'});
+  gsap.set('#cineMedia',{clipPath:'inset(7% 18% 7% 18% round 36px)'});
   gsap.set('#cineImg',{scale:1.5});
   gsap.set('.cine-final',{opacity:0,y:70});
   const ct=gsap.timeline({scrollTrigger:{trigger:'#cine',start:'top top',end:'+=300%',pin:true,scrub:1,anticipatePin:1}});
