@@ -636,8 +636,9 @@ footer ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
 <div class="ctl"><label data-i18n="ap.exp" for="aMsg">Comentarios / experiencia</label><textarea data-i18n-ph="ap.expPh" id="aMsg" placeholder="Ej.: 2 años en almacén, manejo de transpaleta, disponible desde octubre."></textarea></div>
 <div class="consent" id="consentBox">
 <input id="aConsent" type="checkbox"/>
-<label for="aConsent"><span data-i18n="ap.consent1">Acepto los</span> <button data-i18n="ap.consent2" data-open="legal" type="button">Términos y Condiciones y la Política de Tratamiento de Datos Personales</button> <span data-i18n="ap.consent3">(GDPR / RODO) para que Mesh Consulting me contacte sobre ofertas laborales y, con mi consentimiento, comparta mis datos con el empleador correspondiente.</span> *</label>
+<label for="aConsent"><span data-i18n="ap.consent1">Acepto los</span> <button data-i18n="ap.consent2" data-open="legal" type="button">Términos y Condiciones y la Política de Tratamiento de Datos Personales</button> <span data-i18n="ap.consent3">(GDPR / RODO) para que Mesh Consulting me contacte sobre ofertas laborales.</span> *</label>
 </div>
+<div class="consent" id="consentBox2"><input id="aConsent2" type="checkbox"/><label for="aConsent2" data-i18n="ap.share">Acepto que Mesh Consulting comparta mis datos con el empleador (o su intermediario) de la oferta que me interesa, para que puedan contactarme. (Opcional)</label></div>
 <span class="err" id="consentErr"></span>
 <button class="btn btn-p" type="submit"><i data-lucide="send"></i><span data-i18n="ap.send">Enviar mis datos</span></button>
 <p class="note" data-i18n="ap.note">Al enviar, recibirás un correo de confirmación y te llevaremos a WhatsApp (+48 797 325 805) para hablar con un asesor.</p>
@@ -691,7 +692,7 @@ footer ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
 <div aria-hidden="true" class="wordmark" id="wordmark">Mesh</div>
 <div class="legal-id" style="text-align:center;color:var(--dim);font-size:12px;margin:18px 0 6px">Mesh Consulting sp. z o.o. · KRS 0001275324 · NIP 8982339482 · REGON 54603382100000 · Wrocław, Polonia</div><div class="legal">
 <span>© <span id="yr">2026</span> Mesh Consulting. <span data-i18n="f.rights">Todos los derechos reservados.</span></span>
-<a class="privacy-link" data-i18n="f.privacy" href="/es/privacidad/" rel="noopener" style="color:var(--dim);text-decoration:none" target="_blank">Política de privacidad y RODO</a>
+<a class="privacy-link" data-i18n="f.privacy" href="/es/privacidad/" rel="noopener" style="color:var(--dim);text-decoration:none" target="_blank">Política de privacidad y RODO</a> <a class="terms-link" data-i18n="f.terms" href="/es/terminos/" rel="noopener" style="color:var(--dim);text-decoration:none;margin-left:12px" target="_blank">Términos y condiciones</a>
 </div>
 </div>
 <div class="wrap"><p class="legal-note" data-i18n="legal.note" style="font-size:.85rem;line-height:1.5;color:var(--muted,#9aa3b2);max-width:880px;margin:0 auto;padding:18px 20px 6px;text-align:center">Mesh Consulting no es una agencia de empleo ni de reclutamiento y no es un empleador. Difundimos ofertas laborales de empleadores en Polonia y ofrecemos consultoría sobre Polonia. El contrato, los documentos y las condiciones de trabajo se acuerdan directamente entre tú y el empleador.</p></div>
@@ -783,7 +784,7 @@ const T={es:{
  'nav.home':'Inicio','nav.mission':'Misión y visión','nav.jobs':'Ofertas laborales','nav.b2b':'Empresas (B2B)','nav.contact':'Contacto',
  'hero.pill':'Breslavia (Wrocław), Polonia · Ofertas laborales y consultoría sobre Polonia',
  'hero.title':'Conectamos talento global con <span class="grad-text">oportunidades reales</span> en Polonia.',
- 'legal.note':'Mesh Consulting no es una agencia de empleo ni de reclutamiento y no es un empleador. Difundimos ofertas laborales de empleadores en Polonia y ofrecemos consultoría sobre Polonia. El contrato, los documentos y las condiciones de trabajo se acuerdan directamente entre tú y el empleador.','hero.sub':'Difusión de ofertas laborales y consultoría sobre Polonia para candidatos de Latinoamérica, Asia y África.',
+ 'legal.note':'Mesh Consulting no es una agencia de empleo ni de reclutamiento y no es un empleador. Difundimos ofertas laborales de empleadores en Polonia y ofrecemos consultoría sobre Polonia. El contrato, los documentos y las condiciones de trabajo se acuerdan directamente entre tú y el empleador.','f.terms':'Términos y condiciones','ap.share':'Acepto que Mesh Consulting comparta mis datos con el empleador (o su intermediario) de la oferta que me interesa, para que puedan contactarme. (Opcional)','hero.sub':'Difusión de ofertas laborales y consultoría sobre Polonia para candidatos de Latinoamérica, Asia y África.',
  'hero.intro':'Difundimos ofertas laborales de empleadores en Polonia y te ponemos en contacto con ellos. El contrato y los documentos los gestiona directamente el empleador; nosotros te damos información y orientación sobre Polonia.',
  'search.cat':'Categoría','search.city':'Ciudad en Polonia','search.radius':'Distancia / filtro','search.btn':'Buscar ofertas',
  'stats.placed':'Ofertas activas','stats.partners':'Empresas aliadas','stats.countries':'Países de origen',
@@ -820,7 +821,7 @@ const T={es:{
  'ap.name':'Nombre completo','ap.namePh':'María Fernanda López','ap.country':'País de origen / nacionalidad','ap.countryPh':'Colombia',
  'ap.phone':'Teléfono / WhatsApp','ap.area':'Área de interés','ap.where':'¿Dónde estás ahora?','ap.exp':'Comentarios / experiencia',
  'ap.expPh':'Ej.: 2 años en almacén, manejo de transpaleta, disponible desde octubre.',
- 'ap.consent1':'Acepto los','ap.consent2':'Términos y Condiciones y la Política de Tratamiento de Datos Personales','ap.consent3':'(GDPR / RODO) para que Mesh Consulting me contacte sobre ofertas laborales y, con mi consentimiento, comparta mis datos con el empleador correspondiente.',
+ 'ap.consent1':'Acepto los','ap.consent2':'Términos y Condiciones y la Política de Tratamiento de Datos Personales','ap.consent3':'(GDPR / RODO) para que Mesh Consulting me contacte sobre ofertas laborales.',
  'ap.send':'Enviar mis datos','ap.note':'Al enviar, recibirás un correo de confirmación y te llevaremos a WhatsApp (+48 797 325 805) para hablar con un asesor.','ap.email':'Correo electrónico','ap.offer':'¿Qué oferta te interesa?','ap.offerAny':'Cualquier oferta / consulta general','err.email':'Escribe un correo válido (ej.: nombre@gmail.com).','ap.doneP2':'Te enviamos un correo de confirmación a {e}. Un asesor te contactará pronto. Te estamos llevando a WhatsApp…','wa.apply':'Hola, me interesa la oferta:','wa.applyGen':'Hola, me interesan las ofertas de trabajo en Polonia.','wa.general':'Consulta general (cualquier oferta)','wa.email':'Correo',
  'ap.doneT':'¡Gracias! Recibimos tus datos',
  'ap.doneBtn':'Abrir WhatsApp','ap.again':'Editar datos',
@@ -834,7 +835,7 @@ const T={es:{
  'nav.home':'Home','nav.mission':'Mission & vision','nav.jobs':'Job offers','nav.b2b':'Business (B2B)','nav.contact':'Contact',
  'hero.pill':'Wrocław, Poland · Job offers and consulting on Poland',
  'hero.title':'Connecting global talent with <span class="grad-text">real opportunities</span> in Poland.',
- 'legal.note':'Mesh Consulting is not an employment or recruitment agency and is not an employer. We share job offers from employers in Poland and offer consulting on Poland. Contracts, documents and working conditions are agreed directly between you and the employer.','hero.sub':'Job-offer distribution and consulting on Poland for candidates from Latin America, Asia and Africa.',
+ 'legal.note':'Mesh Consulting is not an employment or recruitment agency and is not an employer. We share job offers from employers in Poland and offer consulting on Poland. Contracts, documents and working conditions are agreed directly between you and the employer.','f.terms':'Terms and conditions','ap.share':'I agree that Mesh Consulting may share my details with the employer (or its intermediary) of the offer I am interested in, so they can contact me. (Optional)','hero.sub':'Job-offer distribution and consulting on Poland for candidates from Latin America, Asia and Africa.',
  'hero.intro':'We share job offers from employers in Poland and put you in touch with them. The contract and documents are handled directly by the employer; we give you information and guidance about Poland.',
  'search.cat':'Category','search.city':'City in Poland','search.radius':'Distance / filter','search.btn':'Search jobs',
  'stats.placed':'Active offers','stats.partners':'Partner companies','stats.countries':'Countries of origin',
@@ -871,7 +872,7 @@ const T={es:{
  'ap.name':'Full name','ap.namePh':'Maria Fernanda Lopez','ap.country':'Country of origin / nationality','ap.countryPh':'Colombia',
  'ap.phone':'Phone / WhatsApp','ap.area':'Area of interest','ap.where':'Where are you now?','ap.exp':'Comments / experience',
  'ap.expPh':'E.g. 2 years in a warehouse, pallet jack experience, available from October.',
- 'ap.consent1':'I accept the','ap.consent2':'Terms and Conditions and the Personal Data Processing Policy','ap.consent3':'(GDPR / RODO) so that Mesh Consulting can contact me about job offers and, with my consent, share my details with the employer concerned.',
+ 'ap.consent1':'I accept the','ap.consent2':'Terms and Conditions and the Personal Data Processing Policy','ap.consent3':'(GDPR / RODO) so that Mesh Consulting can contact me about job offers.',
  'ap.send':'Send my details','ap.note':'After submitting you will receive a confirmation email and we will take you to WhatsApp (+48 797 325 805) to talk to an advisor.','ap.email':'Email','ap.offer':'Which offer are you interested in?','ap.offerAny':'Any offer / general enquiry','err.email':'Enter a valid email (e.g. name@gmail.com).','ap.doneP2':'We sent a confirmation email to {e}. An advisor will contact you soon. Taking you to WhatsApp…','wa.apply':'Hello, I am interested in the offer:','wa.applyGen':'Hello, I am interested in job offers in Poland.','wa.general':'General enquiry (any offer)','wa.email':'Email',
  'ap.doneT':'Thank you! We received your details',
  'ap.doneBtn':'Open WhatsApp','ap.again':'Edit details',
@@ -890,7 +891,7 @@ const T={es:{
  "nav.contact":"Kontakt",
  "hero.pill":"Wrocław, Polska · Oferty pracy i doradztwo o Polsce",
  "hero.title":"Łączymy globalne talenty z <span class=\"grad-text\">prawdziwymi możliwościami</span> w Polsce.",
- "legal.note":"Mesh Consulting nie jest agencją zatrudnienia ani rekrutacji i nie jest pracodawcą. Publikujemy oferty pracy od pracodawców w Polsce i oferujemy doradztwo dotyczące Polski. Umowę, dokumenty i warunki pracy ustalasz bezpośrednio z pracodawcą.","hero.sub":"Publikowanie ofert pracy i doradztwo dotyczące Polski dla kandydatów z Ameryki Łacińskiej, Azji i Afryki.",
+ "legal.note":"Mesh Consulting nie jest agencją zatrudnienia ani rekrutacji i nie jest pracodawcą. Publikujemy oferty pracy od pracodawców w Polsce i oferujemy doradztwo dotyczące Polski. Umowę, dokumenty i warunki pracy ustalasz bezpośrednio z pracodawcą.","f.terms":"Regulamin","ap.share":"Wyrażam zgodę, aby Mesh Consulting przekazał moje dane pracodawcy (lub jego pośrednikowi) z interesującej mnie oferty, aby mógł się ze mną skontaktować. (Opcjonalnie)","hero.sub":"Publikowanie ofert pracy i doradztwo dotyczące Polski dla kandydatów z Ameryki Łacińskiej, Azji i Afryki.",
  "hero.intro":"Publikujemy oferty pracy od pracodawców w Polsce i łączymy Cię z nimi. Umowę i dokumenty załatwia bezpośrednio pracodawca; my zapewniamy informacje i wsparcie w sprawach dotyczących Polski.",
  "search.cat":"Kategoria",
  "search.city":"Miasto w Polsce",
@@ -992,7 +993,7 @@ const T={es:{
  "ap.expPh":"Np.: 2 lata w magazynie, obsługa wózka paletowego, dostępny od października.",
  "ap.consent1":"Akceptuję",
  "ap.consent2":"Regulamin oraz Politykę przetwarzania danych osobowych",
- "ap.consent3":"(RODO), aby Mesh Consulting mogło się ze mną kontaktować w sprawie ofert pracy oraz, za moją zgodą, przekazywać moje dane odpowiedniemu pracodawcy.",
+ "ap.consent3":"(RODO), aby Mesh Consulting mogło się ze mną kontaktować w sprawie ofert pracy.",
  "ap.send":"Wyślij moje dane",
  "ap.note":"Po wysłaniu otrzymasz e-mail z potwierdzeniem, a my przeniesiemy Cię na WhatsApp (+48 797 325 805), aby porozmawiać z doradcą.",
  "ap.email":"Adres e-mail",
@@ -1209,7 +1210,7 @@ $('#applyForm').addEventListener('submit',e=>{
   const area=$('#aArea').selectedOptions[0].text, where=v('aStatus')?$('#aStatus').selectedOptions[0].text:'—';
   /* 1) datos al CRM (n8n): Google Sheets + correo de confirmación */
   const data={nombre:v('aName'),pais:v('aCountry'),codigo:v('aCode'),telefono:v('aPhone'),email:v('aEmail'),area,ubicacion:where,
-    oferta_id:job?job.id:'general',oferta_titulo:offerTxt,experiencia:v('aMsg'),idioma:lang,consentimiento:'si',
+    oferta_id:job?job.id:'general',oferta_titulo:offerTxt,experiencia:v('aMsg'),idioma:lang,consentimiento:'si',consentimiento_empleador:($('#aConsent2').checked?'si':'no'),
     consentimiento_fecha:new Date().toISOString(),pagina:location.href.split('#')[0],website:v('aWeb')};
   const hook=document.documentElement.dataset.webhook||'';
   if(hook&&!/TU-N8N/.test(hook)&&!data.website){
