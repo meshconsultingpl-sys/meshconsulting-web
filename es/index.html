@@ -315,6 +315,29 @@ footer ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
 .fab:hover{transform:scale(1.06)}
 .fab svg{width:28px;height:28px}
 </style>
+<style id="calc-css">
+.more-roles{margin-top:28px;display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:22px 26px;border:1px solid var(--line-2);border-radius:var(--r);background:var(--glass)}
+.more-roles>div{flex:1 1 420px;max-width:760px}
+.more-roles p{margin:8px 0 0;color:var(--muted);line-height:1.6}
+.calc{margin-top:28px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:20px;align-items:stretch}
+.calc-in,.calc-out{border:1px solid var(--line-2);border-radius:var(--r);padding:24px}
+.calc-in{background:var(--glass)}
+.calc-out{background:var(--glass-2);display:flex;flex-direction:column;gap:10px}
+.calc-row{margin-bottom:18px}
+.calc-row label{display:flex;justify-content:space-between;gap:12px;font-weight:700;font-size:15px;margin-bottom:8px}
+.calc-row output{font-family:var(--f-display);font-size:15px;color:var(--cyan)}
+.calc input[type=range]{width:100%;accent-color:#4FACFE}
+.calc-fx{display:flex;gap:8px;align-items:center;flex-wrap:wrap;color:var(--muted);font-size:14px}
+.calc-fx input{background:var(--ink-2);border:1px solid var(--line-2);border-radius:10px;color:var(--text);padding:8px 10px;width:110px;font:inherit}
+.calc-k{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.calc-big{font-family:var(--f-display);font-size:clamp(28px,4vw,44px);line-height:1.1}
+.calc-fxout{color:var(--blue);font-weight:700;min-height:1.4em}
+.calc-out ul{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:6px;color:var(--muted);font-size:15px}
+.calc-out li{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding-top:6px}
+.calc-out li b{color:var(--text)}
+.calc-note{font-size:13px;color:var(--dim);line-height:1.5;margin:6px 0 4px}
+@media(max-width:820px){.calc{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 
@@ -565,7 +588,24 @@ footer ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
 <div class="pay"><span class="rate">24 PLN/h</span><span class="hrs">12 h al día</span></div><ul class="perks"><li><span>Todas las nacionalidades que hablen inglés</span></li><li><span>Hombres y mujeres, parejas bienvenidas</span></li><li><span>Alojamiento 650 PLN · transporte 100 PLN</span></li></ul>
 <a class="btn btn-wa" href="https://wa.me/48797325805?text=Hola%2C%20me%20interesa%20la%20oferta%20de%20L%C3%ADnea%20de%20producci%C3%B3n%20electr%C3%B3nica%20%E2%80%94%20TAESUNG%20LG%20en%20Polonia%20%28ubicaci%C3%B3n%20por%20WhatsApp%29." rel="noopener" target="_blank">Consultar por WhatsApp</a><a class="btn btn-g" href="../es/ofertas/produccion-linea-electronica-taesung-lg/">Ver detalles de la oferta</a></div></article>
 </div>
+<div class="more-roles rv"><div><span class="eyebrow" data-i18n="more.eyebrow">Más ofertas disponibles</span><p data-i18n="more.text">Estos son ejemplos de las ofertas que difundimos. Para confirmar qué puestos están abiertos y conocer los detalles exactos, escríbenos y te orientamos hacia la oferta adecuada del empleador. También difundimos ofertas para perfiles cualificados, por ejemplo soldadores.</p></div><a class="btn btn-wa" href="https://wa.me/48797325805?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20todas%20las%20ofertas%20de%20trabajo%20disponibles%20en%20Polonia." rel="noopener" target="_blank" data-i18n="more.btn">Consultar todas las ofertas</a></div>
+</div>
 </section>
+<section class="sec" id="calculadora" style="padding-top:24px">
+<div class="wrap" style="position:relative;z-index:1">
+<span class="eyebrow rv" data-i18n="calc.eyebrow">Estimación de ingresos</span>
+<h2 class="rv" data-i18n="calc.title" style="margin-top:14px;max-width:22ch">Mira cómo podría ser un mes</h2>
+<p class="lead rv" data-i18n="calc.lead" style="margin-top:14px">Mueve los controles para ver una estimación mensual orientativa. Las cifras son ejemplos basados en las ofertas que difundimos; el pago, las horas y el alojamiento reales los define cada empleador.</p>
+<div class="calc rv"><div class="calc-in">
+<div class="calc-row"><label for="cHours"><span data-i18n="calc.hours">Horas por día</span><output id="cHoursO">11 h</output></label><input id="cHours" type="range" min="8" max="12" step="1" value="11"/></div>
+<div class="calc-row"><label for="cRate"><span data-i18n="calc.rate">Tarifa neta por hora (PLN)</span><output id="cRateO">25 PLN</output></label><input id="cRate" type="range" min="20" max="35" step="0.5" value="25"/></div>
+<div class="calc-row"><label for="cDays"><span data-i18n="calc.days">Días de trabajo al mes</span><output id="cDaysO">22</output></label><input id="cDays" type="range" min="18" max="26" step="1" value="22"/></div>
+<div class="calc-row"><label for="cAcc"><span data-i18n="calc.acc">Alojamiento (PLN al mes)</span><output id="cAccO">600 PLN</output></label><input id="cAcc" type="range" min="0" max="900" step="50" value="600"/></div>
+<div class="calc-fx"><span data-i18n="calc.fx">Opcional: convierte a tu moneda. 1 PLN =</span><input id="cFx" type="number" min="0" step="any" inputmode="decimal" aria-label="1 PLN"/><input id="cCur" type="text" maxlength="5" placeholder="USD" aria-label="currency" style="width:80px"/></div></div>
+<div class="calc-out"><div class="calc-k" data-i18n="calc.out">Estimación mensual orientativa después del alojamiento</div><div class="calc-big" id="cBig">—</div><div class="calc-fxout" id="cFxOut"></div><ul><li><span data-i18n="calc.gross">Pago antes del alojamiento</span><b id="cGross">—</b></li><li><span data-i18n="calc.accL">Alojamiento</span><b id="cAccOut">—</b></li></ul><p class="calc-note" data-i18n="calc.note">Esto es una ilustración, no una oferta ni una garantía. El pago, las horas, los descuentos y el alojamiento reales los define cada empleador y pueden cambiar. Mesh Consulting no es el empleador.</p><a class="btn btn-wa" href="https://wa.me/48797325805?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20todas%20las%20ofertas%20de%20trabajo%20disponibles%20en%20Polonia." rel="noopener" target="_blank" data-i18n="calc.btn">Consultar ofertas actuales</a></div></div>
+</div>
+</section>
+
 <!-- ============ B2B ============ -->
 <!-- ============ POSTULACIÓN ============ -->
 <section class="sec" id="postular" style="padding-top:24px">
@@ -754,7 +794,7 @@ const T={es:{
  'nav.home':'Inicio','nav.mission':'Misión y visión','nav.about':'Nosotros','nav.jobs':'Ofertas laborales','nav.b2b':'Empresas (B2B)','nav.contact':'Contacto',
  'hero.pill':'Breslavia (Wrocław), Polonia · Ofertas laborales y consultoría sobre Polonia',
  'hero.title':'Conectamos talento global con <span class="grad-text">oportunidades reales</span> en Polonia.',
- 'legal.note':'Mesh Consulting no es una agencia de empleo ni de reclutamiento y no es un empleador. Difundimos ofertas laborales de empleadores en Polonia y ofrecemos consultoría sobre Polonia. El contrato, los documentos y las condiciones de trabajo se acuerdan directamente entre tú y el empleador.','hero.sub':'Difusión de ofertas laborales y consultoría sobre Polonia para candidatos de Latinoamérica, Asia y África.',
+ 'legal.note':'Mesh Consulting no es una agencia de empleo ni de reclutamiento y no es un empleador. Difundimos ofertas laborales de empleadores en Polonia y ofrecemos consultoría sobre Polonia. El contrato, los documentos y las condiciones de trabajo se acuerdan directamente entre tú y el empleador.','more.eyebrow':'Más ofertas disponibles','more.text':'Estos son ejemplos de las ofertas que difundimos. Para confirmar qué puestos están abiertos y conocer los detalles exactos, escríbenos y te orientamos hacia la oferta adecuada del empleador. También difundimos ofertas para perfiles cualificados, por ejemplo soldadores.','more.btn':'Consultar todas las ofertas','calc.eyebrow':'Estimación de ingresos','calc.title':'Mira cómo podría ser un mes','calc.lead':'Mueve los controles para ver una estimación mensual orientativa. Las cifras son ejemplos basados en las ofertas que difundimos; el pago, las horas y el alojamiento reales los define cada empleador.','calc.hours':'Horas por día','calc.rate':'Tarifa neta por hora (PLN)','calc.days':'Días de trabajo al mes','calc.acc':'Alojamiento (PLN al mes)','calc.fx':'Opcional: convierte a tu moneda. 1 PLN =','calc.out':'Estimación mensual orientativa después del alojamiento','calc.gross':'Pago antes del alojamiento','calc.accL':'Alojamiento','calc.note':'Esto es una ilustración, no una oferta ni una garantía. El pago, las horas, los descuentos y el alojamiento reales los define cada empleador y pueden cambiar. Mesh Consulting no es el empleador.','calc.btn':'Consultar ofertas actuales','hero.sub':'Difusión de ofertas laborales y consultoría sobre Polonia para candidatos de Latinoamérica, Asia y África.',
  'hero.intro':'Difundimos ofertas laborales de empleadores en Polonia y te ponemos en contacto con ellos. El contrato y los documentos los gestiona directamente el empleador; nosotros te damos información y orientación sobre Polonia.',
  'search.cat':'Categoría','search.city':'Ciudad en Polonia','search.radius':'Distancia / filtro','search.btn':'Buscar ofertas',
  'stats.placed':'Ofertas activas','stats.partners':'Empresas aliadas','stats.countries':'Países de origen',
@@ -805,7 +845,7 @@ const T={es:{
  'nav.home':'Home','nav.mission':'Mission & vision','nav.about':'About us','nav.jobs':'Job offers','nav.b2b':'Business (B2B)','nav.contact':'Contact',
  'hero.pill':'Wrocław, Poland · Job offers and consulting on Poland',
  'hero.title':'Connecting global talent with <span class="grad-text">real opportunities</span> in Poland.',
- 'legal.note':'Mesh Consulting is not an employment or recruitment agency and is not an employer. We share job offers from employers in Poland and offer consulting on Poland. Contracts, documents and working conditions are agreed directly between you and the employer.','hero.sub':'Job-offer distribution and consulting on Poland for candidates from Latin America, Asia and Africa.',
+ 'legal.note':'Mesh Consulting is not an employment or recruitment agency and is not an employer. We share job offers from employers in Poland and offer consulting on Poland. Contracts, documents and working conditions are agreed directly between you and the employer.','more.eyebrow':'More roles available','more.text':'These are examples of the offers we share. To check which positions are open and get the exact details, contact us and we will point you to the right employer offer. We also share offers for skilled profiles — for example welders.','more.btn':'Ask about all roles','calc.eyebrow':'Income estimate','calc.title':'See what a month could look like','calc.lead':'Move the sliders to see an illustrative monthly estimate. Figures are examples based on the offers we share; each employer sets the real pay, hours and accommodation.','calc.hours':'Hours per day','calc.rate':'Net hourly rate (PLN)','calc.days':'Working days per month','calc.acc':'Accommodation (PLN per month)','calc.fx':'Optional: convert to your currency. 1 PLN =','calc.out':'Illustrative monthly estimate after accommodation','calc.gross':'Pay before accommodation','calc.accL':'Accommodation','calc.note':'This is an illustration, not an offer or a guarantee. Real pay, hours, deductions and accommodation are set by each employer and can change. Mesh Consulting is not the employer.','calc.btn':'Ask about current offers','hero.sub':'Job-offer distribution and consulting on Poland for candidates from Latin America, Asia and Africa.',
  'hero.intro':'We share job offers from employers in Poland and put you in touch with them. The contract and documents are handled directly by the employer; we give you information and guidance about Poland.',
  'search.cat':'Category','search.city':'City in Poland','search.radius':'Distance / filter','search.btn':'Search jobs',
  'stats.placed':'Active offers','stats.partners':'Partner companies','stats.countries':'Countries of origin',
@@ -861,7 +901,7 @@ const T={es:{
  "nav.contact":"Kontakt",
  "hero.pill":"Wrocław, Polska · Oferty pracy i doradztwo o Polsce",
  "hero.title":"Łączymy globalne talenty z <span class=\"grad-text\">prawdziwymi możliwościami</span> w Polsce.",
- "legal.note":"Mesh Consulting nie jest agencją zatrudnienia ani rekrutacji i nie jest pracodawcą. Publikujemy oferty pracy od pracodawców w Polsce i oferujemy doradztwo dotyczące Polski. Umowę, dokumenty i warunki pracy ustalasz bezpośrednio z pracodawcą.","hero.sub":"Publikowanie ofert pracy i doradztwo dotyczące Polski dla kandydatów z Ameryki Łacińskiej, Azji i Afryki.",
+ "legal.note":"Mesh Consulting nie jest agencją zatrudnienia ani rekrutacji i nie jest pracodawcą. Publikujemy oferty pracy od pracodawców w Polsce i oferujemy doradztwo dotyczące Polski. Umowę, dokumenty i warunki pracy ustalasz bezpośrednio z pracodawcą.","more.eyebrow":"Więcej ofert","more.text":"To przykłady ofert, które publikujemy. Aby potwierdzić, które stanowiska są otwarte, i poznać szczegóły, napisz do nas, a wskażemy odpowiednią ofertę pracodawcy. Publikujemy też oferty dla wykwalifikowanych osób — na przykład spawaczy.","more.btn":"Zapytaj o wszystkie oferty","calc.eyebrow":"Szacunek zarobków","calc.title":"Zobacz, jak może wyglądać miesiąc","calc.lead":"Przesuń suwaki, aby zobaczyć orientacyjny szacunek miesięczny. Kwoty to przykłady oparte na ofertach, które publikujemy; rzeczywiste wynagrodzenie, godziny i zakwaterowanie ustala każdy pracodawca.","calc.hours":"Godziny dziennie","calc.rate":"Stawka netto za godzinę (PLN)","calc.days":"Dni pracy w miesiącu","calc.acc":"Zakwaterowanie (PLN miesięcznie)","calc.fx":"Opcjonalnie: przelicz na swoją walutę. 1 PLN =","calc.out":"Orientacyjny szacunek miesięczny po odliczeniu zakwaterowania","calc.gross":"Wynagrodzenie przed odliczeniem zakwaterowania","calc.accL":"Zakwaterowanie","calc.note":"To ilustracja, a nie oferta ani gwarancja. Rzeczywiste wynagrodzenie, godziny, potrącenia i zakwaterowanie ustala każdy pracodawca i mogą się one zmienić. Mesh Consulting nie jest pracodawcą.","calc.btn":"Zapytaj o aktualne oferty","hero.sub":"Publikowanie ofert pracy i doradztwo dotyczące Polski dla kandydatów z Ameryki Łacińskiej, Azji i Afryki.",
  "hero.intro":"Publikujemy oferty pracy od pracodawców w Polsce i łączymy Cię z nimi. Umowę i dokumenty załatwia bezpośrednio pracodawca; my zapewniamy informacje i wsparcie w sprawach dotyczących Polski.",
  "search.cat":"Kategoria",
  "search.city":"Miasto w Polsce",
@@ -1398,5 +1438,24 @@ applyLang(); bindSpot(); icons();
 })();
 </script>
 
+<script>
+(function(){
+  var $=function(i){return document.getElementById(i)};
+  var loc=document.documentElement.lang||'pl';
+  function fmt(n){try{return Math.round(n).toLocaleString(loc)}catch(e){return String(Math.round(n))}}
+  function upd(){
+    var h=+$('cHours').value,r=+$('cRate').value,d=+$('cDays').value,a=+$('cAcc').value;
+    $('cHoursO').textContent=h+' h';$('cRateO').textContent=r.toFixed(1).replace(/\.0$/,'')+' PLN';$('cDaysO').textContent=d;$('cAccO').textContent=a+' PLN';
+    var gross=h*r*d,net=Math.max(0,gross-a);
+    $('cBig').textContent='\u2248 '+fmt(Math.round(net/50)*50)+' PLN';
+    $('cGross').textContent='\u2248 '+fmt(Math.round(gross/50)*50)+' PLN';
+    $('cAccOut').textContent=fmt(a)+' PLN';
+    var fx=parseFloat($('cFx').value),cur=($('cCur').value||'').toUpperCase().trim();
+    $('cFxOut').textContent=(fx>0)?'\u2248 '+fmt(Math.round(net/50)*50*fx)+' '+cur:'';
+  }
+  ['cHours','cRate','cDays','cAcc','cFx','cCur'].forEach(function(i){var e=$(i);if(e)e.addEventListener('input',upd)});
+  upd();
+})();
+</script>
 </body>
 </html>
