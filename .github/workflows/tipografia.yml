@@ -21,7 +21,7 @@ jobs:
           for f in glob.glob('**/*.html', recursive=True):
               t = open(f, encoding='utf-8').read()
               o = t
-              if '--f-display' not in t:
+              if 'fonts.googleapis.com' not in t:
                   continue
               t = re.sub(r'<link[^>]*fonts\.googleapis\.com/css2[^>]*>', NEW, t)
               t = re.sub(r'--f-display\s*:[^;}]*', '--f-display:"Plus Jakarta Sans","Inter",system-ui,sans-serif', t)
